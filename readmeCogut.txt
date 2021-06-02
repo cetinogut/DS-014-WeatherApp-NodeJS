@@ -6,3 +6,13 @@ nodemon src/app.js -e js,hbs
 
 install request module:
  npm i request@2.88.0
+
+heroku create cogut-weather-app
+
+git add .
+git commit -m "Heroku readiness"
+git push
+
+git remote
+
+ https://git.heroku.com/cogut-weather-app.git

@@ -1,10 +1,10 @@
 console.log('Client side JS file is loaded')
 
-fetch('http://puzzle.mead.io/puzzle').then((response) => { // fetch data from this url and then run this method
+/* fetch('http://puzzle.mead.io/puzzle').then((response) => { // fetch data from this url and then run this method
     response.json().then( (data) => {
         console.log(data)
     })
-})
+}) */
 
 /* fetch('http://api.weatherstack.com/current?access_key=baf1c913844086a0c29764a26689eb91&query=boston&units=f').then((response) => { // fetch data from this url and then run this method
     response.json().then( (data) => {
@@ -41,7 +41,8 @@ weatherForm.addEventListener('submit', (e) => { // bu listener html deki submit 
     messageOne.textContent = 'Loading...' // birinci p ye yazacak id message-1
     messageTwo.textContent = '' // ikinci p ye yazacak
 
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    //fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=!').then((response) => { // heroku ya deploy ederken burayı local host tan kurtararak generik hale getirdik.
         response.json().then((data) => {
             if (data.error) {
                 console.log(data.error) // browser console a yazacak
