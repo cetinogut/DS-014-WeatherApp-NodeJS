@@ -14,7 +14,7 @@ console.log('Client side JS file is loaded')
 
 // b ıfetch ile browser in console ine yazdırabiliyoruz. Test için kullanabiliriz.
 //fetch('http://localhost:3000/weather?address=!').then((response) => { // fetch data from this url and then run this method
-fetch('/weather?address=!').then((response) => { // heroku ya deploy ederken burayı local host tan kurtararak generik hale getirdik.
+fetch('/weather?address=' + location).then((response) => { // heroku ya deploy ederken burayı local host tan kurtararak generik hale getirdik.
     response.json().then( (data) => { // we get the parsed json data
         console.log(data)
         if(data.error){
@@ -42,7 +42,7 @@ weatherForm.addEventListener('submit', (e) => { // bu listener html deki submit 
     messageTwo.textContent = '' // ikinci p ye yazacak
 
     //fetch('http://localhost:3000/weather?address=' + location).then((response) => {
-    fetch('/weather?address=!').then((response) => { // heroku ya deploy ederken burayı local host tan kurtararak generik hale getirdik.
+    fetch('/weather?address=' + location).then((response) => { // heroku ya deploy ederken burayı local host tan kurtararak generik hale getirdik.
         response.json().then((data) => {
             if (data.error) {
                 console.log(data.error) // browser console a yazacak
