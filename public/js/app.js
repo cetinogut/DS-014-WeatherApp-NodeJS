@@ -13,7 +13,8 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => { // fetch data from th
 }) */
 
 // b ıfetch ile browser in console ine yazdırabiliyoruz. Test için kullanabiliriz.
-fetch('http://localhost:3000/weather?address=!').then((response) => { // fetch data from this url and then run this method
+//fetch('http://localhost:3000/weather?address=!').then((response) => { // fetch data from this url and then run this method
+fetch('/weather?address=!').then((response) => { // heroku ya deploy ederken burayı local host tan kurtararak generik hale getirdik.
     response.json().then( (data) => { // we get the parsed json data
         console.log(data)
         if(data.error){

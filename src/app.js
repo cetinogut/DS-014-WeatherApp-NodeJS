@@ -12,6 +12,7 @@ console.log(path.join(__dirname))
 console.log(path.join(__dirname, '../public')) // public in route ını öğrenmmek için yaptık
 
 const app = express()
+const port = process.env.PORT ||3000 // heroku nun env den uygun port u alabilmesi için ekledik, local de yine 300 de çalışacak
 
 //define paths for express congfig
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -127,6 +128,10 @@ app.get('*', (req, res) =>{ // match anything that is not matched in routes
 
 
 //start the  server
-app.listen(3000, () => {
+/* app.listen(3000, () => {
     console.log('Server is running on port 3000...')
+}) */
+
+app.listen(port, () => {
+    console.log('Server is running on port ' + port + ' ...')
 })
